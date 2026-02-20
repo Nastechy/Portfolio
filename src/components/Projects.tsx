@@ -1,29 +1,91 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  tech: string[];
+  images: string[];
+}
+
+const projects: Project[] = [
   {
     title: "NGML Gas Distribution Platform",
     description:
       "Enterprise-grade gas distribution and billing system with role-based dashboards, customer onboarding, invoicing, and daily gas reading systems for NNPC subsidiary.",
     tech: ["React", "TypeScript", "Redux", "Ant Design", "REST APIs"],
-    image: null,
+    images: [],
   },
   {
     title: "A4NT Energy CRM",
     description:
       "Multi-role energy CRM with Admin, Agent, and Installer dashboards. Features sales tracking, wallet top-up integration, commission monitoring, and analytics.",
     tech: ["React", "TypeScript", "Material UI", "React Query"],
-    image: null,
+    images: [],
   },
   {
     title: "BrissTruct – Construction SaaS",
     description:
       "Construction project management platform with multi-project dashboards for budgeting, procurement, inventory tracking, and multi-stage approval workflows.",
     tech: ["React", "Next.js", "Tailwind CSS", "Redux", "REST APIs"],
-    image: null,
+    images: [],
   },
 ];
+
+const ImageCarousel = ({ images, title }: { images: string[]; title: string }) => {
+  const [current, setCurrent] = useState(0);
+
+  if (images.length === 0) {
+    return (
+      <div className="w-full h-64 md:h-80 bg-secondary rounded flex flex-col items-center justify-center border border-border gap-2">
+        <span className="text-muted-foreground font-mono text-sm">Project Screenshots</span>
+        <span className="text-muted-foreground/50 font-mono text-xs">Coming soon</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative w-full h-64 md:h-80 rounded overflow-hidden group">
+      <img
+        src={images[current]}
+        alt={`${title} screenshot ${current + 1}`}
+        className="w-full h-full object-cover transition-opacity duration-300"
+      />
+
+      {images.length > 1 && (
+        <>
+          <button
+            onClick={() => setCurrent((p) => (p === 0 ? images.length - 1 : p - 1))}
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm p-1.5 rounded-full text-foreground opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+            aria-label="Previous image"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <button
+            onClick={() => setCurrent((p) => (p === images.length - 1 ? 0 : p + 1))}
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm p-1.5 rounded-full text-foreground opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+            aria-label="Next image"
+          >
+            <ChevronRight size={16} />
+          </button>
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+            {images.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrent(idx)}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  idx === current ? "bg-primary" : "bg-foreground/30"
+                }`}
+                aria-label={`Go to image ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
 
 const Projects = () => {
   return (
@@ -50,27 +112,15 @@ const Projects = () => {
                 i % 2 === 1 ? "md:text-right" : ""
               }`}
             >
-              {/* Project Image */}
+              {/* Project Images */}
               <div
                 className={`md:col-span-7 rounded overflow-hidden ${
                   i % 2 === 1 ? "md:col-start-6 md:row-start-1" : ""
                 }`}
               >
-                <div className="relative group">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-64 md:h-80 object-cover rounded"
-                    />
-                  ) : (
-                    <div className="w-full h-64 md:h-80 bg-secondary rounded flex items-center justify-center border border-border">
-                      <span className="text-muted-foreground font-mono text-sm">
-                        Project Screenshot
-                      </span>
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-primary/10 hover:bg-transparent transition-colors duration-300 rounded" />
+                <div className="relative">
+                  <ImageCarousel images={project.images} title={project.title} />
+                  <div className="absolute inset-0 bg-primary/10 hover:bg-transparent transition-colors duration-300 rounded pointer-events-none" />
                 </div>
               </div>
 
