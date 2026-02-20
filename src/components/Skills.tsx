@@ -37,7 +37,7 @@ const Skills = () => {
           viewport={{ once: true }}
           className="section-heading"
         >
-          <span className="text-primary font-mono text-lg">03.</span> Skills
+          <span className="text-primary font-mono text-lg">04.</span> Skills
         </motion.h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">

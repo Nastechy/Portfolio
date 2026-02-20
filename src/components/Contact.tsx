@@ -10,7 +10,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="font-mono text-primary text-sm mb-4"
         >
-          04. What's Next?
+          05. What's Next?
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
