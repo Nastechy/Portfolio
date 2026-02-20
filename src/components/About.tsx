@@ -3,7 +3,7 @@ import profileImg from "@/assets/profile-placeholder.jpg";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 px-6">
+    <section id="about" className="py-24 px-4 md:px-6">
       <div className="container mx-auto max-w-3xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
