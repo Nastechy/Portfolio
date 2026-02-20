@@ -89,7 +89,7 @@ const ImageCarousel = ({ images, title }: { images: string[]; title: string }) =
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 px-6">
+    <section id="projects" className="py-24 px-4 md:px-6">
       <div className="container mx-auto max-w-4xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

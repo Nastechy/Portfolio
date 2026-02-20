@@ -29,7 +29,7 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 px-6">
+    <section id="skills" className="py-24 px-4 md:px-6">
       <div className="container mx-auto max-w-3xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
