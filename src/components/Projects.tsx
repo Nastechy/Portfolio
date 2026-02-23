@@ -89,8 +89,8 @@ const ImageCarousel = ({ images, title }: { images: string[]; title: string }) =
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 px-4 md:px-6">
-      <div className="container mx-auto max-w-4xl">
+    <section id="projects" className="py-12 px-2 md:py-16 md:px-6">
+      <div className="container mx-auto max-w-5xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -100,24 +100,18 @@ const Projects = () => {
           <span className="text-primary font-mono text-lg">03.</span> Featured Projects
         </motion.h2>
 
-        <div className="space-y-24">
-          {projects.map((project, i) => (
+        <div className="space-y-14 md:space-y-24">
+          {projects.map((project) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className={`relative grid md:grid-cols-12 items-center gap-4 ${
-                i % 2 === 1 ? "md:text-right" : ""
-              }`}
+              className="relative grid md:grid-cols-12 items-center gap-4"
             >
               {/* Project Images */}
-              <div
-                className={`md:col-span-7 rounded overflow-hidden ${
-                  i % 2 === 1 ? "md:col-start-6 md:row-start-1" : ""
-                }`}
-              >
+              <div className="md:col-span-7 rounded overflow-hidden">
                 <div className="relative">
                   <ImageCarousel images={project.images} title={project.title} />
                   <div className="absolute inset-0 bg-primary/10 hover:bg-transparent transition-colors duration-300 rounded pointer-events-none" />
@@ -125,34 +119,22 @@ const Projects = () => {
               </div>
 
               {/* Project Info */}
-              <div
-                className={`md:col-span-6 md:row-start-1 relative z-10 ${
-                  i % 2 === 1 ? "md:col-start-1 md:text-left" : "md:col-start-6 md:text-right"
-                }`}
-              >
+              <div className="md:col-span-6 md:row-start-1 relative z-10 mt-4 md:mt-0 md:col-start-6 md:text-right">
                 <p className="font-mono text-primary text-sm mb-2">Featured Project</p>
-                <h3 className="text-xl font-bold text-foreground mb-4 font-heading">
+                <h3 className="text-lg md:text-xl font-bold text-foreground mb-3 md:mb-4 font-heading">
                   {project.title}
                 </h3>
-                <div className="bg-card p-5 rounded shadow-lg glow-sm mb-4">
+                <div className="bg-card p-4 md:p-5 rounded shadow-lg glow-sm mb-4">
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {project.description}
                   </p>
                 </div>
-                <ul
-                  className={`flex flex-wrap gap-3 font-mono text-xs text-muted-foreground mb-4 ${
-                    i % 2 === 1 ? "" : "md:justify-end"
-                  }`}
-                >
+                <ul className="flex flex-wrap gap-3 font-mono text-xs text-muted-foreground mb-4 md:justify-end">
                   {project.tech.map((t) => (
                     <li key={t}>{t}</li>
                   ))}
                 </ul>
-                <div
-                  className={`flex gap-4 ${
-                    i % 2 === 1 ? "" : "md:justify-end"
-                  }`}
-                >
+                <div className="flex gap-4 md:justify-end">
                   <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                     <Github size={18} />
                   </a>

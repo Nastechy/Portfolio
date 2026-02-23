@@ -26,7 +26,7 @@ const Navbar = () => {
         scrolled ? "bg-background/90 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <nav className="container mx-auto flex items-center justify-between px-6 py-5 max-w-5xl">
+      <nav className="container mx-auto flex items-center justify-between px-4 md:px-6 py-4 md:py-5 max-w-5xl">
         <a href="#" className="font-heading text-xl font-bold text-primary">
           {"<CJ />"}
         </a>

@@ -29,8 +29,8 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 px-4 md:px-6">
-      <div className="container mx-auto max-w-3xl">
+    <section id="skills" className="py-12 px-2 md:py-16 md:px-6">
+      <div className="container mx-auto max-w-5xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ const Skills = () => {
           <span className="text-primary font-mono text-lg">04.</span> Skills
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
           {skillCategories.map((cat, i) => (
             <motion.div
               key={cat.title}

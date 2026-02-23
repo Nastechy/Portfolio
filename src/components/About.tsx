@@ -3,8 +3,8 @@ import profileImg from "@/assets/profile-placeholder.jpg";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 px-4 md:px-6">
-      <div className="container mx-auto max-w-3xl">
+    <section id="about" className="py-12 px-2 md:py-16 md:px-6">
+      <div className="container mx-auto max-w-5xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -14,7 +14,7 @@ const About = () => {
           <span className="text-primary font-mono text-lg">01.</span> About Me
         </motion.h2>
 
-        <div className="flex flex-col md:flex-row gap-10 items-start">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -46,9 +46,9 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="relative group shrink-0 mx-auto md:mx-0"
+            className="relative group shrink-0 mx-auto md:mx-0 mt-2 md:mt-0"
           >
-            <div className="relative w-56 h-56 md:w-64 md:h-64 rounded overflow-hidden">
+            <div className="relative w-48 h-48 md:w-64 md:h-64 rounded overflow-hidden">
               <img
                 src={profileImg}
                 alt="Ibini Chinasa Joy"

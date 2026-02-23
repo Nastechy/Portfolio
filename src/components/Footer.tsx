@@ -8,7 +8,7 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className="py-8 px-6">
+    <footer className="py-6 md:py-8 px-4 md:px-6">
       <div className="container mx-auto max-w-5xl flex flex-col items-center gap-6">
         <div className="flex items-center gap-6">
           {socials.map(({ icon: Icon, href, label }) => (

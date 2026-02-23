@@ -62,8 +62,8 @@ const Experience = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="experience" className="py-24 px-4 md:px-6">
-      <div className="container mx-auto max-w-3xl">
+    <section id="experience" className="py-12 px-2 md:py-16 md:px-6">
+      <div className="container mx-auto max-w-5xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,12 +81,12 @@ const Experience = () => {
           className="flex flex-col md:flex-row gap-6"
         >
           {/* Tabs */}
-          <div className="flex md:flex-col overflow-x-auto md:overflow-visible border-b md:border-b-0 md:border-l border-border min-w-fit">
+          <div className="grid grid-cols-2 md:flex md:flex-col border-b md:border-b-0 md:border-l border-border w-full md:w-56 md:shrink-0">
             {experiences.map((exp, i) => (
               <button
                 key={exp.company}
                 onClick={() => setActiveTab(i)}
-                className={`px-5 py-3 text-sm font-mono text-left whitespace-nowrap transition-all ${
+                className={`px-3 md:px-5 py-2.5 md:py-3 text-xs md:text-sm font-mono text-left transition-all ${
                   activeTab === i
                     ? "text-primary bg-primary/5 border-b-2 md:border-b-0 md:border-l-2 border-primary md:-ml-px"
                     : "text-muted-foreground hover:text-primary hover:bg-primary/5 border-b-2 md:border-b-0 md:border-l-2 border-transparent md:-ml-px"
@@ -98,7 +98,7 @@ const Experience = () => {
           </div>
 
           {/* Content */}
-          <div className="min-h-[320px]">
+          <div className="flex-1 min-h-0 md:min-h-[320px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
