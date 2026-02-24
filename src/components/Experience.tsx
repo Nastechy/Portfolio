@@ -5,7 +5,7 @@ const experiences = [
   {
     company: "NGML (NNPC)",
     role: "Front-End Engineer",
-    duration: "Oct 2023 — Jan 2026",
+    // duration: "Oct 2023 — Jan 2026",
     org: "Skillz System Ltd (Abuja)",
     points: [
       "Built enterprise-grade dashboards for gas distribution monitoring and operational reporting.",
@@ -19,7 +19,7 @@ const experiences = [
   {
     company: "A4NT Energy",
     role: "Front-End Engineer",
-    duration: "Oct 2023 — Jan 2026",
+    // duration: "Oct 2023 — Jan 2026",
     org: "Skillz System Ltd (Abuja)",
     points: [
       "Developed multi-role (Admin, Agent, Installer) dashboards with RBAC implementation.",
@@ -33,7 +33,7 @@ const experiences = [
   {
     company: "Inreli Energy",
     role: "Front-End Engineer",
-    duration: "Oct 2023 — Jan 2026",
+    // duration: "Oct 2023 — Jan 2026",
     org: "Skillz System Ltd (Abuja)",
     points: [
       "Built structured onboarding workflows for customers, agents, and installers.",
@@ -46,7 +46,7 @@ const experiences = [
   {
     company: "BrissTruct",
     role: "Front-End Developer",
-    duration: "Jan 2022 — Sep 2023",
+    // duration: "Jan 2022 — Sep 2023",
     org: "Brissas Technologies (Abuja)",
     points: [
       "Built multi-project dashboards for budgeting, procurement, and inventory tracking.",
