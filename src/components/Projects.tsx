@@ -10,6 +10,7 @@ interface Project {
   tech: string[];
   images: string[];
   effect: SwipeEffect;
+  githubUrl: string;
 }
 
 const swipeConfidenceThreshold = 9000;
@@ -34,6 +35,7 @@ const projects: Project[] = [
       "https://picsum.photos/seed/ngml-3/1200/800",
     ],
     effect: "tilt",
+    githubUrl: "https://github.com/Nastechy",
   },
   {
     title: "A4NT Energy CRM",
@@ -46,6 +48,7 @@ const projects: Project[] = [
       "https://picsum.photos/seed/a4nt-3/1200/800",
     ],
     effect: "zoom",
+    githubUrl: "https://github.com/Nastechy",
   },
   {
     title: "BrissTruct – Construction SaaS",
@@ -58,6 +61,7 @@ const projects: Project[] = [
       "https://picsum.photos/seed/brisstruct-3/1200/800",
     ],
     effect: "drift",
+    githubUrl: "https://github.com/Nastechy",
   },
   {
     title: "E-commerce Platform",
@@ -70,6 +74,7 @@ const projects: Project[] = [
       "https://picsum.photos/seed/ecommerce-3/1200/800",
     ],
     effect: "flip",
+    githubUrl: "https://github.com/Nastechy",
   },
 ];
 
@@ -348,7 +353,12 @@ const Projects = () => {
                   ))}
                 </ul>
                 <div className="flex gap-4 md:justify-end">
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href={activeProject.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     <Github size={18} />
                   </a>
                   <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
