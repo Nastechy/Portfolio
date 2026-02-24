@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState, type CSSProperties } from "react";
+import { motion, AnimatePresence, type Variants, type Transition, type TargetAndTransition } from "framer-motion";
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 
 type SwipeEffect = "tilt" | "zoom" | "drift" | "flip";
@@ -14,6 +14,13 @@ interface Project {
 
 const swipeConfidenceThreshold = 9000;
 const swipePower = (offset: number, velocity: number) => Math.abs(offset) * velocity;
+
+interface MotionPreset {
+  variants: Variants;
+  transition: Transition;
+  whileDrag: TargetAndTransition;
+  style: CSSProperties;
+}
 
 const projects: Project[] = [
   {
@@ -102,7 +109,7 @@ const ImageCarousel = ({
     );
   }
 
-  const motionPreset =
+  const motionPreset: MotionPreset =
     effect === "zoom"
       ? {
           variants: {
@@ -111,7 +118,7 @@ const ImageCarousel = ({
             exit: (_dir: number) => ({ opacity: 0, scale: 0.9, filter: "blur(10px)" }),
           },
           transition: {
-            scale: { type: "spring", stiffness: 220, damping: 24 },
+            scale: { type: "spring" as const, stiffness: 220, damping: 24 },
             opacity: { duration: 0.26 },
             filter: { duration: 0.3 },
           },
@@ -136,8 +143,8 @@ const ImageCarousel = ({
               }),
             },
             transition: {
-              x: { type: "spring", stiffness: 230, damping: 22 },
-              y: { type: "spring", stiffness: 180, damping: 20 },
+              x: { type: "spring" as const, stiffness: 230, damping: 22 },
+              y: { type: "spring" as const, stiffness: 180, damping: 20 },
               opacity: { duration: 0.22 },
               scale: { duration: 0.22 },
             },
@@ -160,8 +167,8 @@ const ImageCarousel = ({
                 }),
               },
               transition: {
-                x: { type: "spring", stiffness: 250, damping: 24 },
-                rotateY: { duration: 0.32, ease: "easeOut" },
+                x: { type: "spring" as const, stiffness: 250, damping: 24 },
+                rotateY: { duration: 0.32 },
                 opacity: { duration: 0.22 },
               },
               whileDrag: { rotateY: direction >= 0 ? 4 : -4, scale: 0.97 },
@@ -188,10 +195,10 @@ const ImageCarousel = ({
                 }),
               },
               transition: {
-                x: { type: "spring", stiffness: 240, damping: 24 },
-                y: { type: "spring", stiffness: 220, damping: 22 },
-                rotateZ: { duration: 0.34, ease: "easeOut" },
-                filter: { duration: 0.28, ease: "easeOut" },
+                x: { type: "spring" as const, stiffness: 240, damping: 24 },
+                y: { type: "spring" as const, stiffness: 220, damping: 22 },
+                rotateZ: { duration: 0.34 },
+                filter: { duration: 0.28 },
                 opacity: { duration: 0.28 },
                 scale: { duration: 0.28 },
               },
