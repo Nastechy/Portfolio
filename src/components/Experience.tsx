@@ -56,19 +56,32 @@ const experiences = [
       "Optimized performance for high-data operational dashboards.",
     ],
   },
+  {
+    company: "E-commerce",
+    role: "Front-End Developer",
+    duration: "E-commerce Product Build",
+    org: "Fashion E-commerce Platform",
+    points: [
+      "Built a responsive fashion storefront with product listing, filtering, and detailed product pages.",
+      "Implemented cart and checkout workflows focused on conversion and usability.",
+      "Integrated product and order APIs to support dynamic catalog and transaction flows.",
+      "Improved mobile shopping experience with performance-focused UI rendering and optimization.",
+      "Developed reusable components to support rapid iteration across shopping and account flows.",
+    ],
+  },
 ];
 
 const Experience = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="experience" className="py-12 px-2 md:py-16 md:px-6">
+    <section id="experience" className="perf-section py-12 px-2 md:py-16 lg:py-24 md:px-6">
       <div className="container mx-auto max-w-5xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="section-heading"
+          className="section-heading" data-reveal
         >
           <span className="text-primary font-mono text-lg">02.</span> Experience
         </motion.h2>
@@ -78,7 +91,7 @@ const Experience = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="flex flex-col md:flex-row gap-6"
+          className="flex flex-col md:flex-row gap-6" data-reveal
         >
           {/* Tabs */}
           <div className="grid grid-cols-2 md:flex md:flex-col border-b md:border-b-0 md:border-l border-border w-full md:w-56 md:shrink-0">

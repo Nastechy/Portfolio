@@ -29,13 +29,13 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-12 px-2 md:py-16 md:px-6">
+    <section id="skills" className="perf-section py-12 px-2 md:py-16 md:px-6">
       <div className="container mx-auto max-w-5xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="section-heading"
+          className="section-heading" data-reveal
         >
           <span className="text-primary font-mono text-lg">04.</span> Skills
         </motion.h2>

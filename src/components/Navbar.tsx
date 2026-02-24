@@ -27,8 +27,8 @@ const Navbar = () => {
       }`}
     >
       <nav className="container mx-auto flex items-center justify-between px-4 md:px-6 py-4 md:py-5 max-w-5xl">
-        <a href="#" className="font-heading text-xl font-bold text-primary">
-          {"<CJ />"}
+        <a href="#" className="font-heading text-lg md:text-xl font-bold text-primary">
+          {"</ICJ>"}
         </a>
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link, i) => (
@@ -53,9 +53,7 @@ const Navbar = () => {
             transition={{ delay: 0.5 }}
           >
             <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/resume"
               className="border border-primary text-primary px-4 py-2 rounded text-sm font-mono hover:bg-primary/10 transition-colors"
             >
               Resume

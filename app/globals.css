@@ -118,19 +118,4 @@
   .glow-md {
     box-shadow: 0 0 40px hsl(172 66% 50% / 0.15);
   }
-
-  .perf-section {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 900px;
-  }
-
-  [data-parallax] {
-    will-change: transform;
-  }
-
-  @media (max-width: 1023px) {
-    [data-parallax] {
-      will-change: auto;
-    }
-  }
 }

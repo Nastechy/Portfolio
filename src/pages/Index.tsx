@@ -6,11 +6,13 @@ import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ScrollEffects from "@/components/ScrollEffects";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <ScrollEffects />
       <main>
         <Hero />
         <About />

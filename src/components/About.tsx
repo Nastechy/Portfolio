@@ -1,20 +1,22 @@
 import { motion } from "framer-motion";
-import profileImg from "@/assets/profile-placeholder.jpg";
+import Image from "next/image";
+import profileImg from "@/assets/image.png";
 
 const About = () => {
   return (
-    <section id="about" className="py-12 px-2 md:py-16 md:px-6">
+    <section id="about" className="perf-section py-12 px-2 md:py-16 lg:py-24 md:px-6">
       <div className="container mx-auto max-w-5xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="section-heading"
+          data-reveal
         >
           <span className="text-primary font-mono text-lg">01.</span> About Me
         </motion.h2>
 
-        <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-start" data-reveal>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -49,12 +51,15 @@ const About = () => {
             className="relative group shrink-0 mx-auto md:mx-0 mt-2 md:mt-0"
           >
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded overflow-hidden">
-              <img
+              <Image
                 src={profileImg}
                 alt="Ibini Chinasa Joy"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                fill
+                sizes="(max-width: 768px) 192px, 256px"
+                className="object-cover grayscale-0 hover:grayscale transition-all duration-500"
+                priority
               />
-              <div className="absolute inset-0 bg-primary/20 hover:bg-transparent transition-colors duration-300 rounded" />
+              <div className="absolute inset-0 bg-transparent hover:bg-primary/20 transition-colors duration-300 rounded" />
             </div>
             <div className="absolute inset-0 border-2 border-primary rounded translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300" />
           </motion.div>
