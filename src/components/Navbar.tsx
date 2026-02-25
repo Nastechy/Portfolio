@@ -32,6 +32,12 @@ const Navbar = () => {
           {"</ICJ>"}
         </a>
         <div className="flex items-center gap-3 md:gap-5">
+          <a
+            href="/resume"
+            className="md:hidden border border-primary text-primary px-3 py-1.5 rounded text-xs font-mono hover:bg-primary/10 transition-colors"
+          >
+            Resume
+          </a>
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link, i) => (
               <motion.li

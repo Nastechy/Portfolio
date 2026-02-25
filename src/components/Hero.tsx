@@ -52,7 +52,7 @@ const Hero = () => {
 
   return (
     <section className="perf-section min-h-[85svh] md:min-h-screen flex items-start md:items-center px-2 md:px-6">
-      <div className="container mx-auto max-w-5xl pt-16 md:pt-20 pb-6 md:pb-0">
+      <div className="container mx-auto max-w-5xl pt-20 md:pt-20 pb-6 md:pb-0">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

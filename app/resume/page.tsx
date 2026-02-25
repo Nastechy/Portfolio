@@ -108,12 +108,12 @@ export default function ResumePage() {
         <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-4 py-4 md:px-6 md:py-5">
           <Link
             href="/"
-            className="font-heading text-lg font-bold text-primary transition-opacity hover:opacity-80 md:text-xl"
+            className="font-heading text-lg md:text-xl font-bold text-primary transition-opacity hover:opacity-80"
           >
             {"</ICJ>"}
           </Link>
           <div className="flex items-center gap-2">
-            <span className="hidden rounded-full bg-primary px-3 py-1 text-xs font-semibold tracking-wide text-primary-foreground sm:inline-flex">
+            <span className="hidden rounded-full bg-primary px-3 py-1 text-xs font-mono font-semibold tracking-wide text-primary-foreground sm:inline-flex">
               Resume
             </span>
             <ResumeDownloadButton />
