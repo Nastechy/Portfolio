@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -30,41 +31,42 @@ const Navbar = () => {
         <a href="#" className="font-heading text-lg md:text-xl font-bold text-primary">
           {"</ICJ>"}
         </a>
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link, i) => (
+        <div className="flex items-center gap-3 md:gap-5">
+          <ul className="hidden md:flex items-center gap-8">
+            {navLinks.map((link, i) => (
+              <motion.li
+                key={link.href}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * i }}
+              >
+                <a
+                  href={link.href}
+                  className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <span className="text-primary">0{i + 1}. </span>
+                  {link.label}
+                </a>
+              </motion.li>
+            ))}
             <motion.li
-              key={link.href}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * i }}
+              transition={{ delay: 0.5 }}
             >
               <a
-                href={link.href}
-                className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
+                href="/resume"
+                className="border border-primary text-primary px-4 py-2 rounded text-sm font-mono hover:bg-primary/10 transition-colors"
               >
-                <span className="text-primary">0{i + 1}. </span>
-                {link.label}
+                Resume
               </a>
             </motion.li>
-          ))}
-          <motion.li
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-          >
-            <a
-              href="/resume"
-              className="border border-primary text-primary px-4 py-2 rounded text-sm font-mono hover:bg-primary/10 transition-colors"
-            >
-              Resume
-            </a>
-          </motion.li>
-        </ul>
+          </ul>
+          <ThemeToggle />
+        </div>
       </nav>
     </motion.header>
   );
 };
 
 export default Navbar;
-
-

@@ -2,6 +2,7 @@
 
 import { ReactNode, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ThemeProvider } from "next-themes";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,11 +12,13 @@ export default function Providers({ children }: { children: ReactNode }) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        {children}
-        <Toaster />
-        <Sonner />
-      </TooltipProvider>
+      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+        <TooltipProvider>
+          {children}
+          <Toaster />
+          <Sonner />
+        </TooltipProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

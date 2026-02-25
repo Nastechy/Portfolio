@@ -6,6 +6,52 @@
 
 @layer base {
   :root {
+    --background: 205 45% 98%;
+    --foreground: 220 30% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 16%;
+
+    --primary: 190 86% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 204 30% 92%;
+    --secondary-foreground: 218 24% 24%;
+
+    --muted: 203 25% 94%;
+    --muted-foreground: 218 14% 42%;
+
+    --accent: 188 70% 90%;
+    --accent-foreground: 220 30% 16%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 26% 86%;
+    --input: 215 26% 86%;
+    --ring: 190 86% 38%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 30% 16%;
+    --sidebar-primary: 190 86% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 203 25% 94%;
+    --sidebar-accent-foreground: 220 30% 16%;
+    --sidebar-border: 215 26% 86%;
+    --sidebar-ring: 190 86% 38%;
+
+    --font-heading: 'JetBrains Mono', monospace;
+    --font-body: 'Inter', sans-serif;
+
+    --nav-height: 5rem;
+  }
+
+  .dark {
     --background: 222 47% 6%;
     --foreground: 210 20% 90%;
 
@@ -34,8 +80,6 @@
     --input: 222 20% 18%;
     --ring: 172 66% 50%;
 
-    --radius: 0.5rem;
-
     --sidebar-background: 222 40% 8%;
     --sidebar-foreground: 210 20% 90%;
     --sidebar-primary: 172 66% 50%;
@@ -44,11 +88,6 @@
     --sidebar-accent-foreground: 210 20% 90%;
     --sidebar-border: 222 20% 18%;
     --sidebar-ring: 172 66% 50%;
-
-    --font-heading: 'JetBrains Mono', monospace;
-    --font-body: 'Inter', sans-serif;
-
-    --nav-height: 5rem;
   }
 }
 
@@ -60,6 +99,42 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    position: relative;
+    isolation: isolate;
+    background-image:
+      radial-gradient(circle at 12% -14%, hsl(188 95% 52% / 0.34), transparent 44%),
+      radial-gradient(circle at 98% -18%, hsl(213 95% 58% / 0.24), transparent 42%),
+      radial-gradient(circle at 48% 112%, hsl(178 90% 60% / 0.13), transparent 50%),
+      linear-gradient(175deg, hsl(196 70% 97%) 0%, hsl(205 75% 98%) 42%, hsl(201 48% 95%) 100%),
+      repeating-linear-gradient(
+        90deg,
+        hsl(199 24% 68% / 0.09) 0,
+        hsl(199 24% 68% / 0.09) 1px,
+        transparent 1px,
+        transparent 24px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        hsl(199 24% 68% / 0.06) 0,
+        hsl(199 24% 68% / 0.06) 1px,
+        transparent 1px,
+        transparent 24px
+      );
+    background-attachment: fixed;
+    transition: background-color 300ms ease, color 300ms ease;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 18% 28%, hsl(183 95% 58% / 0.2), transparent 24%),
+      radial-gradient(circle at 82% 22%, hsl(209 95% 62% / 0.17), transparent 28%),
+      radial-gradient(circle at 50% 70%, hsl(174 85% 56% / 0.1), transparent 34%);
+    filter: blur(18px) saturate(108%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -67,8 +142,8 @@
   }
 
   ::selection {
-    background: hsl(172 66% 50% / 0.3);
-    color: hsl(210 20% 95%);
+    background: hsl(var(--primary) / 0.26);
+    color: hsl(var(--foreground));
   }
 
   ::-webkit-scrollbar {
@@ -76,16 +151,28 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: hsl(222 47% 6%);
+    background: hsl(var(--background));
   }
 
   ::-webkit-scrollbar-thumb {
-    background: hsl(222 20% 18%);
+    background: hsl(var(--border));
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(172 66% 50% / 0.5);
+    background: hsl(var(--primary) / 0.45);
+  }
+}
+
+@layer base {
+  .dark body {
+    background-image:
+      radial-gradient(circle at 8% 6%, hsl(var(--primary) / 0.1), transparent 32%),
+      radial-gradient(circle at 88% 2%, hsl(var(--ring) / 0.08), transparent 28%);
+  }
+
+  .dark body::before {
+    content: none;
   }
 }
 
