@@ -52,61 +52,56 @@ const Hero = () => {
 
   return (
     <section className="perf-section min-h-[85svh] md:min-h-screen flex items-start md:items-center px-2 md:px-6">
-      <div className="container mx-auto max-w-6xl pt-16 md:pt-20 pb-6 md:pb-0">
-        <div className="relative overflow-hidden rounded-2xl border border-border/70 bg-gradient-to-br from-card/95 via-card/90 to-primary/8 p-6 shadow-[0_20px_55px_hsl(var(--foreground)/0.13)] backdrop-blur-sm md:p-10">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_8%,hsl(var(--primary)/0.16),transparent_38%),radial-gradient(circle_at_92%_14%,hsl(var(--ring)/0.14),transparent_42%),linear-gradient(165deg,hsl(var(--background)/0.58),hsl(var(--background)/0.26))]" />
-          <div className="relative z-10">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="font-mono text-primary mb-5 text-sm md:text-base"
-            >
-              {typedIntro}
-            </motion.p>
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="text-4xl sm:text-5xl md:text-7xl font-bold text-foreground mb-2 md:mb-3 font-heading"
-              data-parallax
-            >
-              {typedName}
-            </motion.h1>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: introTypingDone ? 1 : 0, y: introTypingDone ? 0 : 20 }}
-              transition={{ duration: 0.45, ease: "easeOut" }}
-              className="text-3xl sm:text-4xl md:text-6xl font-bold text-muted-foreground mb-6 md:mb-8 font-heading"
-            >
-              I build things for the web.
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: introTypingDone ? 1 : 0, y: introTypingDone ? 0 : 20 }}
-              transition={{ duration: 0.45, delay: 0.05, ease: "easeOut" }}
-              className="text-muted-foreground max-w-xl text-base md:text-lg leading-relaxed mb-7 md:mb-12"
-            >
-              Frontend Engineer with 4+ years of experience building scalable SaaS and enterprise
-              web platforms across energy, construction, and workforce management. Specializing in{" "}
-              <span className="text-primary">React</span>,{" "}
-              <span className="text-primary">Next.js</span>, and{" "}
-              <span className="text-primary">TypeScript</span>.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: introTypingDone ? 1 : 0, y: introTypingDone ? 0 : 20 }}
-              transition={{ duration: 0.45, delay: 0.1, ease: "easeOut" }}
-            >
-              <a
-                href="#experience"
-                className="border border-primary text-primary px-5 py-3 md:px-8 md:py-4 rounded font-mono text-sm hover:bg-primary/10 transition-colors inline-block text-center w-full sm:w-auto"
-              >
-                Check out my work →
-              </a>
-            </motion.div>
-          </div>
-        </div>
+      <div className="container mx-auto max-w-5xl pt-16 md:pt-20 pb-6 md:pb-0">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="font-mono text-primary mb-5 text-sm md:text-base"
+        >
+          {typedIntro}
+        </motion.p>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="text-4xl sm:text-5xl md:text-7xl font-bold text-foreground mb-2 md:mb-3 font-heading"
+          data-parallax
+        >
+          {typedName}
+        </motion.h1>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: introTypingDone ? 1 : 0, y: introTypingDone ? 0 : 20 }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
+          className="text-3xl sm:text-4xl md:text-6xl font-bold text-muted-foreground mb-6 md:mb-8 font-heading"
+        >
+          I build things for the web.
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: introTypingDone ? 1 : 0, y: introTypingDone ? 0 : 20 }}
+          transition={{ duration: 0.45, delay: 0.05, ease: "easeOut" }}
+          className="text-muted-foreground max-w-xl text-base md:text-lg leading-relaxed mb-7 md:mb-12"
+        >
+          Frontend Engineer with 4+ years of experience building scalable SaaS and enterprise
+          web platforms across energy, construction, and workforce management. Specializing in{" "}
+          <span className="text-primary">React</span>,{" "}
+          <span className="text-primary">Next.js</span>, and{" "}
+          <span className="text-primary">TypeScript</span>.
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: introTypingDone ? 1 : 0, y: introTypingDone ? 0 : 20 }}
+          transition={{ duration: 0.45, delay: 0.1, ease: "easeOut" }}
+        >
+          <a
+            href="#experience"
+            className="border border-primary text-primary px-5 py-3 md:px-8 md:py-4 rounded font-mono text-sm hover:bg-primary/10 transition-colors inline-block text-center w-full sm:w-auto"
+          >
+            Check out my work →
+          </a>
+        </motion.div>
       </div>
     </section>
   );

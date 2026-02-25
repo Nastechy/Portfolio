@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, Mail, MapPin } from "lucide-react";
+import { ExternalLink, Mail, MapPin } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import ResumeDownloadButton from "@/components/ResumeDownloadButton";
 
@@ -103,16 +103,14 @@ const skillGroups = [
 
 export default function ResumePage() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <div className="resume-toolbar sticky top-0 z-20 border-b border-border/80 bg-background/90 backdrop-blur print:hidden">
-        <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-4 py-3 md:px-8">
+    <main className="min-h-screen bg-background text-foreground font-body">
+      <div className="resume-toolbar sticky top-0 z-20 bg-background/90 backdrop-blur-md print:hidden">
+        <div className="mx-auto flex w-full max-w-5xl items-center justify-between px-4 py-4 md:px-6 md:py-5">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 rounded-md border border-border bg-card/70 px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-accent/60 sm:text-sm"
+            className="font-heading text-lg font-bold text-primary transition-opacity hover:opacity-80 md:text-xl"
           >
-            <ArrowLeft className="h-4 w-4" />
-            <span className="hidden sm:inline">Back to Portfolio</span>
-            <span className="sm:hidden">Back</span>
+            {"</ICJ>"}
           </Link>
           <div className="flex items-center gap-2">
             <span className="hidden rounded-full bg-primary px-3 py-1 text-xs font-semibold tracking-wide text-primary-foreground sm:inline-flex">
@@ -124,12 +122,12 @@ export default function ResumePage() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-5xl space-y-10 px-4 py-8 md:space-y-12 md:px-8 md:py-12">
-        <header className="overflow-hidden rounded-2xl border border-border/90 bg-gradient-to-br from-card via-card to-accent/20 shadow-[0_12px_35px_hsl(var(--foreground)/0.08)]">
+      <div className="resume-print mx-auto w-full max-w-5xl space-y-10 px-4 py-8 md:space-y-12 md:px-8 md:py-12">
+        <header className="resume-card resume-header overflow-hidden rounded-2xl border border-border/90 bg-gradient-to-br from-card via-card to-accent/20 shadow-[0_12px_35px_hsl(var(--foreground)/0.08)]">
           <div className="space-y-6 p-6 md:p-8">
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Ibini Chinasa Joy</p>
-              <h1 className="text-3xl font-bold tracking-tight md:text-5xl">Frontend Engineer</h1>
+              <h1 className="font-heading text-3xl font-bold tracking-tight md:text-5xl">Frontend Engineer</h1>
               <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">{experienceSummary}</p>
             </div>
             <div className="grid gap-3 text-sm md:grid-cols-2">
@@ -167,16 +165,16 @@ export default function ResumePage() {
         </header>
 
         <section className="space-y-5">
-          <h2 className="text-xl font-bold tracking-tight md:text-2xl">Professional Experience</h2>
+          <h2 className="font-heading text-xl font-bold tracking-tight md:text-2xl">Professional Experience</h2>
           <div className="space-y-5">
             {experienceItems.map((item) => (
               <article
                 key={item.company}
-                className="rounded-xl border border-border bg-card/95 p-5 shadow-[0_10px_26px_hsl(var(--foreground)/0.06)] md:p-6"
+                className="resume-card rounded-xl border border-border bg-card/95 p-5 shadow-[0_10px_26px_hsl(var(--foreground)/0.06)] md:p-6"
               >
                 <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
                   <div>
-                    <h3 className="text-lg font-semibold leading-snug">{item.company}</h3>
+                    <h3 className="font-heading text-lg font-semibold leading-snug">{item.company}</h3>
                     <p className="text-sm font-medium text-foreground">{item.role}</p>
                     <p className="text-sm text-muted-foreground">{item.org}</p>
                   </div>
@@ -196,8 +194,8 @@ export default function ResumePage() {
         </section>
 
         <section className="grid gap-5 md:grid-cols-2">
-          <article className="rounded-xl border border-border bg-card p-5 shadow-[0_10px_26px_hsl(var(--foreground)/0.06)] md:p-6">
-            <h2 className="mb-4 text-xl font-bold tracking-tight">Skills</h2>
+          <article className="resume-card rounded-xl border border-border bg-card p-5 shadow-[0_10px_26px_hsl(var(--foreground)/0.06)] md:p-6">
+            <h2 className="font-heading mb-4 text-xl font-bold tracking-tight">Skills</h2>
             <div className="space-y-4">
               {skillGroups.map((group) => (
                 <div key={group.title} className="space-y-2">
@@ -218,8 +216,8 @@ export default function ResumePage() {
           </article>
 
           <div className="space-y-5">
-            <article className="rounded-xl border border-border bg-card p-5 shadow-[0_10px_26px_hsl(var(--foreground)/0.06)] md:p-6">
-              <h2 className="mb-4 text-xl font-bold tracking-tight">Certifications</h2>
+            <article className="resume-card rounded-xl border border-border bg-card p-5 shadow-[0_10px_26px_hsl(var(--foreground)/0.06)] md:p-6">
+              <h2 className="font-heading mb-4 text-xl font-bold tracking-tight">Certifications</h2>
               <ul className="space-y-2 text-sm leading-relaxed text-muted-foreground">
                 <li>The Complete JavaScript Course: From Zero to Expert!</li>
                 <li>React JS - Complete Guide for Frontend Web Development</li>
@@ -229,8 +227,8 @@ export default function ResumePage() {
                 <li>Next.js: The Complete Guide</li>
               </ul>
             </article>
-            <article className="rounded-xl border border-border bg-card p-5 shadow-[0_10px_26px_hsl(var(--foreground)/0.06)] md:p-6">
-              <h2 className="mb-2 text-xl font-bold tracking-tight">Languages</h2>
+            <article className="resume-card rounded-xl border border-border bg-card p-5 shadow-[0_10px_26px_hsl(var(--foreground)/0.06)] md:p-6">
+              <h2 className="font-heading mb-2 text-xl font-bold tracking-tight">Languages</h2>
               <p className="text-sm text-muted-foreground">English</p>
             </article>
           </div>

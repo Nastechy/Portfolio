@@ -206,3 +206,36 @@
     box-shadow: 0 0 40px hsl(172 66% 50% / 0.15);
   }
 }
+
+@media print {
+  @page {
+    size: auto;
+    margin: 12mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  body::before {
+    content: none !important;
+  }
+
+  .resume-print {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 1.25rem !important;
+  }
+
+  .resume-header {
+    overflow: visible !important;
+  }
+
+  .resume-card {
+    box-shadow: none !important;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+}
