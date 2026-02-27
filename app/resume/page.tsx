@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ExternalLink, Mail, MapPin } from "lucide-react";
+import { ExternalLink, Linkedin, Mail } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import ResumeDownloadButton from "@/components/ResumeDownloadButton";
 
@@ -156,10 +156,15 @@ export default function ResumePage() {
                 <Mail className="h-4 w-4" />
                 Ibinichinasajoy@gmail.com
               </a>
-              <span className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-foreground">
-                <MapPin className="h-4 w-4" />
-                Abuja, Nigeria
-              </span>
+              <a
+                className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-foreground transition-colors hover:border-primary/40 hover:bg-accent/40"
+                href="https://ibinijoyportfolio.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="h-4 w-4" />
+                ibinijoyportfolio.vercel.app
+              </a>
             </div>
           </div>
         </header>
@@ -233,6 +238,20 @@ export default function ResumePage() {
             </article>
           </div>
         </section>
+
+        <footer className="mt-8 border-t border-border pt-5">
+          <div className="flex items-center justify-center">
+            <a
+              href="https://www.linkedin.com/in/ibini-chinasa-joy-431a59269"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground transition-colors hover:text-primary"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
+          </div>
+        </footer>
       </div>
     </main>
   );
